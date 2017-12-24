@@ -44,15 +44,13 @@ public class WeatherProvider extends ContentProvider {
 
 //  COMPLETE (7) Instantiate a static UriMatcher using the buildUriMatcher method
 
-    private static final UriMatcher matcher = buildUriMatcher();
-
-
+    public static final UriMatcher matcher = buildUriMatcher();
 
     WeatherDbHelper mOpenHelper;
 
 //  COMPLETE (6) Write a method called buildUriMatcher where you match URI's to their numeric ID
 
-    private static UriMatcher buildUriMatcher (){
+    public static UriMatcher buildUriMatcher (){
 
         final UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);
         final String authority = WeatherContract.CONTENT_AUTHORITY;
