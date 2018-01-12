@@ -34,7 +34,9 @@ import android.widget.ProgressBar;
 
 import com.example.android.sunshine.data.SunshinePreferences;
 import com.example.android.sunshine.data.WeatherContract;
+import com.example.android.sunshine.sync.SunshineSyncUtils;
 import com.example.android.sunshine.utilities.FakeDataUtils;
+import com.example.android.sunshine.utilities.SunshineDateUtils;
 
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor>,
@@ -86,9 +88,7 @@ public class MainActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_forecast);
         getSupportActionBar().setElevation(0f);
 
-        // TODO (12) Remove the fake data creation since we can now sync with live data
-        FakeDataUtils.insertFakeData(this);
-
+        // COMPLETE (12) Remove the fake data creation since we can now sync with live data
         /*
          * Using findViewById, we get a reference to our RecyclerView from xml. This allows us to
          * do things like set the adapter of the RecyclerView and toggle the visibility.
@@ -155,7 +155,8 @@ public class MainActivity extends AppCompatActivity implements
          */
         getSupportLoaderManager().initLoader(ID_FORECAST_LOADER, null, this);
 
-        //  TODO (13) Call SunshineSyncUtils's startImmediateSync method
+        //  COMPLETE (13) Call SunshineSyncUtils's startImmediateSync method
+        SunshineSyncUtils.startImmediateSync(this);
 
     }
 

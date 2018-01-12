@@ -52,13 +52,18 @@
         <!--The manifest entry for our SettingsActivity. Each Activity requires a manifest entry-->
         <activity android:name=".SettingsActivity"/>
 
+        <!-- COMPLETE (8) Register SunshineSyncIntentService in the manifest -->
+        <service
+            android:name=".sync.SunshineSyncIntentService"
+            android:exported="false" />
+
         <!-- Our ContentProvider -->
         <provider
             android:name=".data.WeatherProvider"
             android:authorities="@string/content_authority"
             android:exported="false"/>
         
-        <!-- TODO (8) Register SunshineSyncIntentService in the manifest -->
+
 
     </application>
 </manifest>
